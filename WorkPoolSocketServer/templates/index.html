@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workpool and Socket Server</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+<p>Dự án này dựng một web server cho người dùng gõ vào một số từ 1 đến 100, rồi submit.
+    Trên server sẽ có một workpool để nhận số này và khởi động một tác vụ giả lập. Số càng lớn tác vụ
+    chạy càng lâu.
+    <br>
+    Trong quá trình chạy, tác vụ đều đặn gửi message vào channel mà socket server hứng.
+    Tiếp đó socket server sẽ emit tiến độ tác vụ về cho trình duyệt
+</p>
+
+<p>Nhậpp vào số nguyên dương từ 1 đến 100</p>
+<input type="text" id="txtnum">
+<button id="SubmitTask">Submit Task</button>
+<script src="js/connect_server.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-Tham khảo bài viết ở đây 
+Tham khảo bài viết ở đây [Lập trình Golang kết nối Kafja](https://techmaster.vn/posts/34654/lap-trinh-golang-ket-noi-kafka)
 
 ```
 docker run --net=host -it --name gokafka -v /Volumes/CODE/GoProjects/src/github.com/TechMaster/LearnGo/Kafka:/foo -w /foo golang:alpine /bin/sh
