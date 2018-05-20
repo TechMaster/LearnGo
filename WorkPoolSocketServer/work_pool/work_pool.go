@@ -35,8 +35,8 @@ func New(maxQueueSize int, maxWorkers int,  ss si.ISocketNotify) *WorkPool {
 		for i := 1; i <= wp.maxWorkers; i++ {
 			go func(i int) {
 				for job := range wp.jobs {
-					vd := NewVideoEncoder(wp.outputFolder, wp.socketServer)
-					vd.encodeVideoToHLS(i, job)
+					/*vd := NewVideoEncoder(wp.outputFolder, wp.socketServer)
+					vd.encodeVideoToHLS(i, job)*/
 				}
 			}(i)
 		}
