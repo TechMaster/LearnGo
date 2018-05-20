@@ -1,0 +1,15 @@
+hash: 251fa034fdf81bba489582ef1009d69c3e1de235e1e23b1f2eaba52789e8dcd4
+updated: 2018-05-20T21:15:50.14070384+07:00
+imports:
+- name: github.com/rs/xid
+  version: 12be76bf828a746effd5efb57d81d79862bff144
+- name: github.com/segmentio/ksuid
+  version: 801bc44340820cc2d704696a0deab52301b9ff2a
+- name: github.com/TechMaster/funpackage
+  version: c61c9496178ddf3a95b84f08113ec0016dfa554a
+- name: golang.org/x/sys
+  version: 7c87d13f8e835d2fb3a70a2912c811ed0c1d241b
+  subpackages:
+  - unix
+  - windows
+testImports: []
