@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service Compile {
+    rpc Run(CompileRequest) returns (CompileResponse) {}
+}
+
+message CompileRequest {
+    repeated string SourceCode = 1;
+    string Language = 2; //go,java,c,cpp,py,rb,cs,js
+}
+
+message CompileResponse {
+    string Result = 2;
+}
