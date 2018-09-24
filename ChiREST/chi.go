@@ -2,17 +2,17 @@ package main
 
 import (
 	"flag"
+	"github.com/TechMaster/LearnGo/ChiREST/models"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	//"github.com/go-chi/render"
 	"net/http"
-	"github.com/TechMaster/LearnGo/ChiREST/models"
+	"encoding/json"
 )
 
 var routes = flag.Bool("routes", false, "Generate router documentation")
 
 // Article fixture data
-var articles = []*Article{
+var articles = []*models.Article{
 	{	ID:     "1",
 		UserID: 1,
 		Title:  "Multi-layered 5th generation workforce",
@@ -65,7 +65,7 @@ var articles = []*Article{
 
 
 // User fixture data
-var users = []*User{
+var users = []*models.User{
 	{ID: 1, Name: "Peter"},
 	{ID: 2, Name: "Julia"},
 	{ID: 3, Name: "Rock"},
@@ -75,6 +75,11 @@ var users = []*User{
 	{ID: 7, Name: "Peterson Hans"},
 	{ID: 8, Name: "Julia Racker"},
 	{ID: 9, Name: "Joe Candis"},
+}
+// Sets the content type of response. Also adds the Server header.
+func setContentType(w http.ResponseWriter, contentType string) {
+	w.Header().Set("Server", "Chi")
+	w.Header().Set("Content-Type", contentType)
 }
 
 func main() {
@@ -86,14 +91,16 @@ func main() {
 	//r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 	r.Use(middleware.URLFormat)
-	//r.Use(render.SetContentType(render.ContentTypeJSON))
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("HelloWorld"))
 	})
 
-
-
+	r.Get("/articles", func(w http.ResponseWriter, r *http.Request) {
+		b, _ := json.Marshal(articles)
+		setContentType(w, "application/json")
+		w.Write(b)
+	})
 
 
 	http.ListenAndServe(":3333", r)
