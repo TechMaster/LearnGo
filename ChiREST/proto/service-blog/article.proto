@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package blog;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+service blog {
+    rpc GetAllArticle(EmptyRequest) returns (GetAllArticleResponse);
+}
+
+message EmptyRequest {}
+
+message Article {
+    string id = 1 [(gogoproto.jsontag) = "id"];
+    int64 user_id = 2 [(gogoproto.jsontag) = "user_id"];
+    string title = 3 [(gogoproto.jsontag) = "title"];
+    string slug = 4 [(gogoproto.jsontag) = "slug"];
+}
+
+message GetAllArticleResponse {
+    repeated Article articles = 1 [(gogoproto.jsontag) = "articles"];
+}
+

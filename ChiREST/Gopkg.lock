@@ -2,40 +2,25 @@
 
 
 [[projects]]
-  digest = "1:a9fe0f8ff72c388d0128e88ce5f3c27d37dcd0950acd7cdb8323555f12463396"
-  name = "github.com/go-chi/chi"
+  branch = "master"
+  digest = "1:aa3d8d42865c42626b5c1add193692d045b3188b1479f0a0a88690d21fe20083"
+  name = "github.com/mailru/easyjson"
   packages = [
     ".",
-    "middleware",
+    "buffer",
+    "jlexer",
+    "jwriter",
   ]
   pruneopts = "UT"
-  revision = "b5294d10673813fac8558e7f47242bc9e61b4c25"
-  version = "v3.3.3"
-
-[[projects]]
-  digest = "1:bcd7c6fe3da916b9887cb91340bf52feae66b0064bb40a292040208326c86505"
-  name = "github.com/go-chi/docgen"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "ac43d9a63f3b58b1e82922411d2de365d896ee72"
-  version = "v1.0.2"
-
-[[projects]]
-  digest = "1:54d7b4b9ab2bb2bae35b55eea900bc8fe15cba05a95fc78bf7fd7b82a9a07afa"
-  name = "github.com/go-chi/render"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "3215478343fbc559bd3fc08f7031bb134d6bdad5"
-  version = "v1.0.1"
+  revision = "60711f1a8329503b04e1c88535f419d0bb440bff"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/go-chi/chi",
-    "github.com/go-chi/chi/middleware",
-    "github.com/go-chi/docgen",
-    "github.com/go-chi/render",
+    "github.com/mailru/easyjson",
+    "github.com/mailru/easyjson/jlexer",
+    "github.com/mailru/easyjson/jwriter",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
