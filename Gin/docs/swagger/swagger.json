@@ -1,0 +1,10 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "returns all articles",
+        "title": "getListArticles",
+        "contact": {},
+        "license": {}
+    },
+    "paths": {}
+}

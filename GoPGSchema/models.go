@@ -7,15 +7,14 @@ import (
 )
 
 type Article struct {
-	tableName struct{} `sql:"blog.articles"`
+	tableName struct{} //`sql:"articles"`
 	Id     int // Id is automatically detected as primary key
 	Name   string
-	AuthorID int
-	//Author   *Author
+	Author   *Author
 }
 
 type Author struct {
-	tableName struct{} `sql:"auth.person"`
+	tableName struct{} //`sql:"person"`
 	ID    int     // both "Id" and "ID" are detected as primary key
 	Name  string  `sql:",unique"`
 	Article []*Article // has many relation

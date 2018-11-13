@@ -1,0 +1,7 @@
+info:
+  contact: {}
+  description: returns all articles
+  license: {}
+  title: getListArticles
+paths: {}
+swagger: "2.0"
